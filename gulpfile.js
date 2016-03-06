@@ -5,7 +5,12 @@ var gulp = require('gulp'),
 
 requireDir('./gulp-tasks');
 
-gulp.task('serve', ['ts'], function() {
+gulp.task('cpconfig', function() {
+    return gulp.src(['app/src/main/**/*.json'])
+        .pipe(gulp.dest('build/main'));
+});
+
+gulp.task('serve', ['cpconfig','ts'], function() {
     $.nodemon({
         script: 'build/main/app.js',
         ext: 'js',
