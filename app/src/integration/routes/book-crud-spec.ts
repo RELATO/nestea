@@ -10,14 +10,15 @@ let agent = request.agent(app),
     bookId;
 
 if (process.env.NODE_ENV === 'test') {
-    orm = allModels.modelCollector('hb_test', 'root', 'root', {
-        host: 'virtualbox',
+    orm = allModels.modelCollector('TEST', 'root', 'netsucesso', {
+        host: 'localhost',
         dialect: 'mysql'
     });
 } else if (process.env.NODE_ENV === 'ci') {
     winston.log('info', 'At CI');
-    orm = allModels.modelCollector('circle_test', 'ubuntu', null, {
-        dialect: 'mysql'
+    orm = allModels.modelCollector('circle_test', 'root', "netsucesso", {
+        dialect: 'mysql',
+        host: 'localhost'
     });
 }
 Book = orm.Book;

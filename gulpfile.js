@@ -7,11 +7,12 @@ requireDir('./gulp-tasks');
 
 gulp.task('serve', ['ts'], function() {
     $.nodemon({
-        script: 'build/src/main/app.js',
+        script: 'build/main/app.js',
         ext: 'js',
         env: {
             NODE_ENV: 'development',
             PORT: 8000
+            
         },
         ignore: ['./node_modules/**']
     })

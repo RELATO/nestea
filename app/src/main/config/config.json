@@ -1,0 +1,48 @@
+{
+  "devsqlite": {
+    "dialect": "sqlite",
+    "storage": "./db.development.sqlite"
+  },
+  "devsqlserver": {
+    "dialect": "mssql",
+    "username": "sa",
+    "password": "netsucesso",
+    "database": "TEST",
+    "host": "192.168.140.229"
+  },
+  "testsqlserver": {
+    "dialect": "mssql",
+    "username": "sa",
+    "password": "netsucesso",
+    "database": "TEST",
+    "host": "192.168.140.229"
+  },
+  "development": {
+    "username": "root",
+    "password": "netsucesso",
+    "database": "TEST",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "netsucesso",
+    "database": "TEST",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "ci": {
+    "username": "root",
+    "password": "netsucesso",
+    "database": "circle_test",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

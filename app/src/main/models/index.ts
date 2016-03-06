@@ -19,9 +19,12 @@ export function modelCollector(database: string, username: string, password: str
             db[model.name] = model;
         });
 
-    _.forEach(db, function(model) {
-        if (model.options.hasOwnProperty('associate')) {
-            model.options.associate(db);
+    _.forEach(Object.keys(db), function(modelName) {
+        // if (model.options.hasOwnProperty('associate')) {
+        //     model.options.associate(db);
+        // }
+        if (db[modelName].associate) {
+            db[modelName].associate(db);
         }
     });
 

@@ -6,6 +6,8 @@ import * as bodyParser from 'body-parser';
 import * as models from './models';
 import * as router from './routes';
 let epilogue = require('epilogue');
+const env: string  = process.env.NODE_ENV || 'development';
+let config    = require(__dirname + '/config/config.json')[env];
 
 const app: express.Express = express();
 const port: number = process.env.PORT || 3000;
@@ -20,21 +22,22 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 // Setting up our singleton...
-winston.log('info', 'Environment: ' + process.env.NODE_ENV);
-if (process.env.NODE_ENV === 'test') {
-    allModels = models.modelCollector('hb_test', 'root', 'root', {
+winston.log('info', 'Environment: ' + env);
+if (env === 'test') {
+    allModels = models.modelCollector('TEST', 'root', 'netsucesso', {
         dialect: 'mysql',
-        host: 'virtualbox'
+        host: 'localhost'
     });
-} else if (process.env.NODE_ENV === 'ci') {
+} else if (env === 'ci') {
     winston.log('info', 'at CI');
-    allModels = models.modelCollector('circle_test', 'ubuntu', '', {
-        dialect: 'mysql'
-    });
-} else if (process.env.NODE_ENV === 'development') {
-    allModels = models.modelCollector('hb', 'root', 'root', {
+    allModels = models.modelCollector('circle_test', 'root', 'netsucesso', {
         dialect: 'mysql',
-        host: 'virtualbox'
+        host: 'localhost'
+    });
+} else if (env === 'development') {
+    allModels = models.modelCollector('TEST', 'root', 'netsucesso', {
+        dialect: 'mysql',
+        host: 'localhost'
     });
 
     allModels.sequelize.sync().then(() => {
