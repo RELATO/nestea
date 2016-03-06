@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c411c66-ef8f-486c-8ff6-e4f219aa9630" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/integration/routes/book-crud-spec.ts" afterPath="$PROJECT_DIR$/app/src/integration/routes/book-crud-spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/app.ts" afterPath="$PROJECT_DIR$/app/src/main/app.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/models/index.ts" afterPath="$PROJECT_DIR$/app/src/main/models/index.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path="Node-Typescript-Express4-Sequelize-epilogue.iws" />
     <ignored path=".idea/workspace.xml" />
